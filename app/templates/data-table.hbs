@@ -1,0 +1,23 @@
+{{page-title "DataTable"}}
+
+
+{{#each @model.data as |content|}}
+    <div>
+        <h3>{{content.name}}</h3>
+        <p>{{content.quote}}</p>
+        <p>{{content.altQuote}}</p>
+    </div>
+{{/each}}
+
+<PaginationButtons
+    @isFirst={{@model.isFirst}}
+    @isLast={{@model.isLast}}
+    @nextPage={{@model.nextPage}}
+    @previousPage={{@model.previousPage}}
+/>
+
+Page: {{@model.page}}
+Pages: {{@model.totalPages}}
+Next: {{@model.nextPage}}
+isFirst: {{@model.isFirst}}
+isLast:{{@model.isLast}}
