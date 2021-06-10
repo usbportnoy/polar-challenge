@@ -1,0 +1,12 @@
+<h1>{{@title}}</h1>
+
+{{#each this.pagedData as |content|}}
+    <div>
+        <h3>{{content.name}}</h3>
+        <p>{{content.quote}}</p>
+        <p>{{content.altQuote}}</p>
+    </div>
+{{/each}}
+
+<button {{action 'onPage' this.previousPage}} disabled={{this.isFirst}}>Previous</button>
+<button {{action 'onPage' this.nextPage}} disabled={{this.isLast}}>Next</button>
