@@ -7,5 +7,5 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
-  this.route('data-table');
+  this.route('data-table', {path: '/'});
 });
