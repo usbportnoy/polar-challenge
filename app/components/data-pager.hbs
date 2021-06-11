@@ -1,13 +1,16 @@
 <h1>{{@title}}</h1>
 
+<div class="button-container">
+    <button {{action 'onPage' this.previousPage}} disabled={{this.isFirst}}>Previous</button>
+    <button {{action 'onPage' this.nextPage}} disabled={{this.isLast}}>Next</button>
+    Page: {{this.page}}
+</div>
+
 {{#each this.pagedData as |content|}}
-    <div>
+    <div class="content">
         <h3>{{content.name}}</h3>
         <p>{{content.quote}}</p>
         <p>{{content.altQuote}}</p>
     </div>
 {{/each}}
 
-<button {{action 'onPage' this.previousPage}} disabled={{this.isFirst}}>Previous</button>
-<button {{action 'onPage' this.nextPage}} disabled={{this.isLast}}>Next</button>
-Page: {{this.page}}
