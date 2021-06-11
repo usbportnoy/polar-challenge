@@ -11,9 +11,10 @@ export default class DataPager extends Component {
     @tracked nextPage = this.page + 1;
     @tracked previousPage = this.page - 1;
 
-    pages = Math.ceil(this.args.data.length/this.pageSize);
+    pages = Math.ceil(this.data.length/this.pageSize);
 
     get pageSize(){
+        if(this.args.pageSize == 0) return 1;
         return this.args.pageSize || 1;
     }
 
