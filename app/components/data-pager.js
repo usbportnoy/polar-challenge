@@ -5,13 +5,9 @@ import { action } from '@ember/object';
 export default class DataPager extends Component {
     @tracked page = 1;
 
-    @tracked pagedData = this.getData(this.data, this.page, this.pageSize)
-    @tracked isFirst = this.page == 1;
-    @tracked isLast = this.pages <= this.page;
-    @tracked nextPage = this.page + 1;
-    @tracked previousPage = this.page - 1;
-
-    pages = Math.ceil(this.data.length/this.pageSize);
+    get pages(){
+        return  Math.ceil(this.data.length/this.pageSize);
+    }
 
     get pageSize(){
         if(this.args.pageSize == 0) return 1;
@@ -24,6 +20,26 @@ export default class DataPager extends Component {
 
     get data(){
         return this.args.data || [];
+    }
+
+    get isFirst(){
+        return this.page == 1;
+    }
+
+    get isLast(){
+        return this.pages <= this.page;
+    }
+
+    get nextPage(){
+        return this.page + 1;
+    }
+
+    get previousPage(){
+        return this.page -1;
+    }
+
+    get pagedData(){
+        return this.getData(this.data, this.page, this.pageSize);
     }
 
 
