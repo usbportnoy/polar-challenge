@@ -1,4 +1,6 @@
-<h1>{{this.title}}</h1>
+{{#if this.title}}
+    <h1>{{this.title}}</h1>
+{{/if}}
 
 <div class="button-container">
     <button {{action 'onPage' this.previousPage}} disabled={{this.isFirst}}>Previous</button>
