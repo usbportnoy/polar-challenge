@@ -10,9 +10,9 @@
 
 {{#each this.pagedData as |content|}}
     <div class="content">
-        <h3>{{content.name}}</h3>
-        <p>{{content.quote}}</p>
-        <p>{{content.altQuote}}</p>
+        {{#each-in content as |key value|}}
+            <p>{{key}}: {{value}}</p>
+        {{/each-in}}
     </div>
 {{/each}}
 

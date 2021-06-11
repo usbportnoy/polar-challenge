@@ -8,6 +8,9 @@ export default class DataTableRoute extends Route {
                 name: "Hank Hill",
                 quote: "Bwaaa!",
                 altQuote: "That boy ain't right.",
+                key: "value",
+                key2: 1,
+                data1: true
             },
             {
                 name: "Peggy Hill",
