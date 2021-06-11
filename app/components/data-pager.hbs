@@ -3,8 +3,8 @@
 {{/if}}
 
 <div class="button-container">
-    <button {{action 'onPage' this.previousPage}} disabled={{this.isFirst}}>Previous</button>
-    <button {{action 'onPage' this.nextPage}} disabled={{this.isLast}}>Next</button>
+    <button {{on "click" (fn this.onPage this.previousPage)}} disabled={{this.isFirst}}>Previous</button>
+    <button {{on "click" (fn this.onPage this.nextPage)}} disabled={{this.isLast}}>Next</button>
     Page: {{this.page}}
 </div>
 
