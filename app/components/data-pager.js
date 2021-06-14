@@ -6,7 +6,7 @@ export default class DataPager extends Component {
     @tracked page = 1;
 
     get pages(){
-        return  Math.ceil(this.data.length/this.pageSize);
+        return Math.ceil(this.data.length/this.pageSize);
     }
 
     get pageSize(){
@@ -41,7 +41,6 @@ export default class DataPager extends Component {
     get pagedData(){
         return this.getData(this.data, this.page, this.pageSize);
     }
-
 
     getData = function(content, page, max){
         return content.slice((page - 1) * max, page * max);
